@@ -15,4 +15,5 @@ Create a secret named TOKEN with value your bots token.
 
 Run the main.py file.
 And you are good to go to use slashcommands in your server.
+
 To create more slash commands follow the format in main.py file.
