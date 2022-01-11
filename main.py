@@ -28,11 +28,11 @@ async def on_ready():
 async def _help(ctx: SlashContext):
 	await ctx.send(content="pong!")
 
-@slash.slash(name="info", description="Basic info about GODX XGAMER")
+@slash.slash(name="your_cmd_name", description="description of your cmd")
 async def _info(ctx: SlashContext):
-  embed=discord.Embed(title="**ABOUT**", color=0x00ffff)
-  embed.add_field(name="OWNER", value="GODX XGAMER", inline=False)
-  embed.add_field(name="NAME", value="RAVNIT", inline=False)
+  embed=discord.Embed(title="**title of your cmd", color="hex code")
+  embed.add_field(name="field 1 title", value="field 1 description", inline=True or False as per choice)
+  embed.add_field(name="field 2 title", value="field 2 description", inline=True or False as per choice)
   await ctx.send(embed=embed)
 
 # Space given text by user
