@@ -9,9 +9,10 @@ pip i discord.py
 pip i discord-py-slash-command.
 
 Format the main.py file as per your requirement.
+Two preset commands are already given. One which sends embeds can be customized.
 
-Create a secret named TOKEN
-with value your bots token. 
+Create a secret named TOKEN with value your bots token. 
+
 Run the main.py file.
 And you are good to go to use slashcommands in your server.
 To create more slash commands follow the format in main.py file.
