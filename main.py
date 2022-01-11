@@ -19,7 +19,7 @@ slash = SlashCommand(client, sync_commands=True)
 
 @client.event
 async def on_ready():
-	await client.change_presence(status=discord.Status.online, activity=discord.Game(name='Discord')) #Bot status, change this to anything you like
+	await client.change_presence(status=discord.Status.online, activity=discord.Game(name='Your Name-Bot')) #Bot status, change this to anything you like
 	print("Bot online") #will print "bot online" in the console when the bot is online
 	
 
@@ -29,7 +29,7 @@ async def _help(ctx: SlashContext):
 	await ctx.send(content="pong!")
 
 @slash.slash(name="your_cmd_name", description="description of your cmd")
-async def _info(ctx: SlashContext):
+async def your_cmd_name(ctx: SlashContext):
   embed=discord.Embed(title="**title of your cmd", color="hex code")
   embed.add_field(name="field 1 title", value="field 1 description", inline=True or False as per choice)
   embed.add_field(name="field 2 title", value="field 2 description", inline=True or False as per choice)
