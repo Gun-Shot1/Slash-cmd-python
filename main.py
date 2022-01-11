@@ -1,11 +1,9 @@
 import os
-from keep_alive import keep_alive
 import discord
 import discord.ext
 from discord.utils import get
 from discord.ext import commands, tasks
 from discord.ext.commands import has_permissions,  CheckFailure, check
-import os
 from discord_slash import SlashCommand
 from discord_slash import SlashContext
 from discord_slash.utils import manage_commands
@@ -29,14 +27,14 @@ async def _help(ctx: SlashContext):
 	await ctx.send(content="pong!")
 
 #Send a preset embed to the channel where command is invoked.
-@slash.slash(name="your_cmd_name", description="description of your cmd")
-async def your_cmd_name(ctx: SlashContext):
-  embed=discord.Embed(title="**title of your cmd", color="hex code")
-  embed.add_field(name="field 1 title", value="field 1 description", inline=True or False as per choice)
-  embed.add_field(name="field 2 title", value="field 2 description", inline=True or False as per choice)
+@slash.slash(name="your-cmd-name", description="description of your cmd")
+async def your-cmd-name(ctx: SlashContext):
+  embed=discord.Embed(title="**title of your cmd", color=0xyour-hex-code)
+  embed.add_field(name="field-1-title", value="field-1-description", inline=True-or-False-as-per-your-choice)
+  embed.add_field(name="field-2-title", value="field-2-description", inline=True-or-False-as-per-your-choice)
   await ctx.send(embed=embed)
 
-# Space given text by user
+#Spacing the given text by user
 @slash.slash(name="space", description="Space your text", options=[manage_commands.create_option( #create an arg
     name = "text", #Name the arg as "text"
     description = "The text to space", #Describe arg
@@ -48,9 +46,6 @@ async def _space(ctx: SlashContext, sentence):
 	for char in sentence: #For each character in given sentence
 		newword = newword + char + "   " #Add to new sentence  with space
 	await ctx.send(content=newword) #send mew sentence
-
-#Run our webserver, this is what we will ping
-keep_alive()
 
 #Run our bot
 client.run(os.getenv("TOKEN")) 
