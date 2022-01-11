@@ -9,6 +9,8 @@ pip i discord.py
      then 
 pip i discord-py-slash-command.
 
+Format the main.py file as per your requirement.
+
 Create a secret named TOKEN
 with value your bots token. 
 Run the main.py file
