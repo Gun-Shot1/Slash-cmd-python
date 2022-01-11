@@ -23,11 +23,12 @@ async def on_ready():
 	print("Bot online") #will print "bot online" in the console when the bot is online
 	
 
-#Send message "pong" when user sends /ping
+#Responds with "pong"
 @slash.slash(name="ping", description="Ping Pong")
 async def _help(ctx: SlashContext):
 	await ctx.send(content="pong!")
 
+#Send a preset embed to the channel where command is invoked.
 @slash.slash(name="your_cmd_name", description="description of your cmd")
 async def your_cmd_name(ctx: SlashContext):
   embed=discord.Embed(title="**title of your cmd", color="hex code")
