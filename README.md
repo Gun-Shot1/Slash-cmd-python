@@ -1,5 +1,4 @@
-A simple and efficient slash command handler for your bots by. 
-🔪GunShot🔪.
+A simple and efficient slash command handler for your bots by 🔪GunShot🔪.
 
 Libraries needed are - 
 discord.py and discord-py-slash-command.
