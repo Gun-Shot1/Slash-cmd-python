@@ -7,6 +7,7 @@ from discord.ext.commands import has_permissions,  CheckFailure, check
 from discord_slash import SlashCommand
 from discord_slash import SlashContext
 from discord_slash.utils import manage_commands
+from discord_slash.utils.manage_commands import create_option, create_choice
 # ^^ All of our necessary imports
 
 #Define our bot
@@ -46,6 +47,29 @@ async def _space(ctx: SlashContext, sentence):
 	for char in sentence: #For each character in given sentence
 		newword = newword + char + "   " #Add to new sentence  with space
 	await ctx.send(content=newword) #send mew sentence
+
+@slash.slash(name="test",
+             description="This is just a test command, nothing more.",
+             options=[
+               create_option(
+                 name="optone",
+                 description="This is the first option we have.",
+                 option_type=3,
+                 required=False,
+                 choices=[
+                  create_choice(
+                    name="ChoiceOne",
+                    value="DOGE!"
+                  ),
+                  create_choice(
+                    name="ChoiceTwo",
+                    value="NO DOGE"
+                  )
+                ]
+               )
+             ])
+async def test(ctx, optone: str):
+  await ctx.send(content=f"Wow, you actually chose {optone}? :(")	
 
 #Run our bot
 client.run(os.getenv("TOKEN")) 
